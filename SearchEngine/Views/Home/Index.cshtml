@@ -1,0 +1,33 @@
+﻿@model SearchEngine.Models.SearchCriteria
+
+@{
+    ViewBag.Title = "Search Engine";
+    var scopeList = new List<string>() { "Web", "Images", "News" };
+}
+
+    <h2>Search</h2>
+    <fieldset>
+        <legend>Criteria</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SearchString)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.SearchString)
+            @Html.DropDownListFor(model => model.SearchScope, new SelectList(scopeList))
+        </div>
+        <p>
+            <input type="submit" id="btnSubmit" value="Search" />
+        </p>
+        <div id="resultsView" class="jsontotable">
+        </div>
+    </fieldset>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/custom")
+
+    <script language="javascript" type="text/javascript">
+        var performSearchURL = '@Url.Action("PerformSearchResults", "Home")';
+    </script>
+}
