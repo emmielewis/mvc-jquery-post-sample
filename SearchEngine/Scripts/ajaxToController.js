@@ -8,6 +8,14 @@ function SearchForData() {
     //post the data to the page and then add to a HTML div to show.
     $.post(performSearchURL, 'SearchScope=' + $("select#SearchScope").val() + '&SearchString=' + $("input#SearchString").val(),
         function (data) {
-            $.jsontotable(data, { id: '#resultsView', header: false });
+
+            $('#resultsView').DataTable({
+                data: data,
+                columns: [
+                    { data: 'UserId' },
+                    { data: 'Title' },
+                    { data: 'Body' }
+                ]
+            });
         });
 }

@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Search Engine";
-    var scopeList = new List<string>() { "Web", "Images", "News" };
+    var scopeList = new List<string>() { "Web"};
 }
 
     <h2>Search</h2>
@@ -19,9 +19,9 @@
         <p>
             <input type="submit" id="btnSubmit" value="Search" />
         </p>
-        <div id="resultsView" class="jsontotable">
-        </div>
     </fieldset>
+
+    <table id="resultsView" class="display" cellspacing="0" width="100%"></table>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

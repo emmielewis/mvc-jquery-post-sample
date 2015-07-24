@@ -13,7 +13,7 @@ namespace SearchEngine
 
             bundles.Add(new ScriptBundle("~/bundles/custom").Include(
                         "~/Scripts/ajaxToController.js",
-                        "~/Scripts/jquery.jsontotable.js"));
+                        "~/Scripts/jquery.dataTables.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));
@@ -41,7 +41,8 @@ namespace SearchEngine
                         "~/Content/themes/base/jquery.ui.tabs.css",
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
-                        "~/Content/themes/base/jquery.ui.theme.css"));
+                        "~/Content/themes/base/jquery.ui.theme.css",
+                        "~/Content/themes/base/jquery.dataTables.css"));
         }
     }
 }
